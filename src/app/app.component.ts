@@ -7,12 +7,42 @@ import { FaceSnap } from './models/face-snap.model';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+
+  faceSnaps!: FaceSnap[];
+
+  /*
   mySnap!: FaceSnap;
   mySnap2!: FaceSnap;
   mySnap3!: FaceSnap;
+  */
 
   ngOnInit() {
-    this.mySnap = {
+
+    this.faceSnaps = [{
+      title: 'Pichu',
+      description: 'Petite souris jaune électrique',
+      creatDate: new Date(),
+      snaps: 25,
+      imageUrl: 'https://www.pokebip.com/pokedex-images/ecarlate-violet/300/172.png?v=ev2',
+      location: 'Johto'
+    },
+    {
+      title: 'Pikachu',
+      description: 'Évolution de Pichu',
+      creatDate: new Date(),
+      snaps: 32,
+      imageUrl: 'https://www.pokebip.com/pokedex-images/ecarlate-violet/300/25.png?v=ev2',
+      location: 'Kanto'
+    },
+    {
+      title: 'Raichu',
+      description: 'Évolution de Pikachu',
+      creatDate: new Date(),
+      snaps: 50,
+      imageUrl: 'https://www.pokebip.com/pokedex-images/ecarlate-violet/300/26.png?v=ev2'
+    }];
+
+    /*this.mySnap = {
       title: 'Pichu',
       description: 'Petite souris jaune électrique',
       creatDate: new Date(),
@@ -37,7 +67,7 @@ export class AppComponent implements OnInit {
       snaps: 50,
       imageUrl: 'https://www.pokebip.com/pokedex-images/ecarlate-violet/300/26.png?v=ev2'
 
-    };
+    };*/
 
 
     /*this.mySnap2=new FaceSnap('Pikachu', 'Évolution de Pichu', new Date(), 25, 'https://www.pokebip.com/pokedex-images/ecarlate-violet/300/25.png?v=ev2');
