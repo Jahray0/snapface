@@ -44,6 +44,14 @@ export class FaceSnapComponent implements OnInit{
     this.imageUrl3='https://www.pokebip.com/pokedex-images/ecarlate-violet/300/26.png?v=ev2'*/
   }
 
+  onAddSnap(){
+    this.snaps ++;
+  }
+
+  onRazSnaps(){
+    this.snaps=25;
+  }
+
 
 }
 

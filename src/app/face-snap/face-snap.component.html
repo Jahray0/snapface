@@ -3,9 +3,14 @@
   <p>mis en ligne le : {{ creatDate }}</p>
   <img [src]="imageUrl" [alt]="title" />
   <p>{{ description }}</p>
-  <p>👍 {{ snaps }}</p>
+  <p>
+    <button (click)="onAddSnap()">Oh snap</button>
+    👍 {{ snaps }}
+    <button (click)="onRazSnaps()">RAZ snaps</button>
+  </p>
 </div>
-<!--
+
+<!-- ajoute 2 card
   <div class="face-snap-card">
     <h2>{{ title2 }}</h2>
     <p>mis en ligne le : {{ creatDate2 }}</p>
