@@ -3,6 +3,7 @@
   <p>mis en ligne le : {{ faceSnap.creatDate }}</p>
   <img [src]="faceSnap.imageUrl" [alt]="faceSnap.title" />
   <p>{{ faceSnap.description }}</p>
+  <p *ngIf="faceSnap.location">Pokémon aperçu à : {{ faceSnap.location }}</p>
   <p>
     <button (click)="onSnap()">{{ buttonText }}</button>
     👍 {{ faceSnap.snaps }}
