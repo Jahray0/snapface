@@ -1,28 +1,11 @@
 <div class="face-snap-card">
-  <h2>{{ title }}</h2>
-  <p>mis en ligne le : {{ creatDate }}</p>
-  <img [src]="imageUrl" [alt]="title" />
-  <p>{{ description }}</p>
+  <h2>{{ faceSnap.title }}</h2>
+  <p>mis en ligne le : {{ faceSnap.creatDate }}</p>
+  <img [src]="faceSnap.imageUrl" [alt]="faceSnap.title" />
+  <p>{{ faceSnap.description }}</p>
   <p>
-    <button (click)="onAddSnap()">Oh snap</button>
-    👍 {{ snaps }}
+    <button (click)="onSnap()">{{ buttonText }}</button>
+    👍 {{ faceSnap.snaps }}
     <button (click)="onRazSnaps()">RAZ snaps</button>
   </p>
 </div>
-
-<!-- ajoute 2 card
-  <div class="face-snap-card">
-    <h2>{{ title2 }}</h2>
-    <p>mis en ligne le : {{ creatDate2 }}</p>
-    <img [src]="imageUrl2" [alt]="title2" />
-    <p>{{ description2 }}</p>
-    <p>👍 {{ snaps2 }}</p>
-  </div>
-
-  <div class="face-snap-card">
-    <h2>{{ title3 }}</h2>
-    <p>mis en ligne le : {{ creatDate3 }}</p>
-    <img [src]="imageUrl3" [alt]="title3" />
-    <p>{{ description3 }}</p>
-    <p>👍 {{ snaps3 }}</p>
-  </div>-->
