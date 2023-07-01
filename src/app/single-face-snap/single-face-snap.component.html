@@ -14,6 +14,7 @@
     <span [ngStyle]="{ color: 'rgb(0, ' + faceSnap.snaps * 4 + ', 0)' }"
       >👍 {{ faceSnap.snaps }}</span
     >
-    <button (click)="onViewFaceSnap()">View</button>
+    <!--Ici on utilise /facesnaps car sinon on arrive sur http://localhost:4200/facesnaps/1/facesnaps et on veut http://localhost:4200/facesnaps-->
+    <button routerLink="/facesnaps">Back</button>
   </p>
 </div>
