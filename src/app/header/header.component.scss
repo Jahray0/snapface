@@ -3,3 +3,19 @@ header {
   text-align: center;
   padding: 10px;
 }
+
+a {
+  text-decoration: none;
+  color: #333;
+  padding: 0 10px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.active {
+  text-decoration: underline;
+  color: rgb(209, 195, 0);
+  background-color: rgb(61, 48, 238);
+}

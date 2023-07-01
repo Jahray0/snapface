@@ -1,1 +1,14 @@
-<header><h1>Les meilleurs Pokémons</h1></header>
+<header>
+  <h1>Les meilleurs Pokémons</h1>
+  <nav>
+    <a
+      routerLink=""
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      >Home
+    </a>
+    <!--avec touterLinkActive permet de souligner la page affiché mais il faut ajouter [routerLinkActiveOptions]="{exact:true }" car
+    facesnaps est l'enfant de la route vide-->
+    <a routerLink="facesnaps" routerLinkActive="active">Liste</a>
+  </nav>
+</header>
