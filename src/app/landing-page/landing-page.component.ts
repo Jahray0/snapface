@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router} from '@angular/router';
 
 @Component({
@@ -6,7 +6,10 @@ import { Router} from '@angular/router';
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss']
 })
-export class LandingPageComponent {
+export class LandingPageComponent implements  OnInit{
+
+  userEmail!: string;
+  //On peut mettre une valeur par defaut avec : userEmail:string = 'test@google.com';
 
   //vu que onContinue est comme un service on peut le mettre dans le constructeur comme argument (router)
   constructor(private router:Router) { }
@@ -17,4 +20,7 @@ export class LandingPageComponent {
     this.router.navigateByUrl('facesnaps')
   }
 
+  onSubmitForm() {
+    console.log(this.userEmail);
+  }
 }
