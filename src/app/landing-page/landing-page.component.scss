@@ -1,8 +1,18 @@
 .landing-block {
   position: absolute;
-  top: 50%;
+  top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    input {
+      height: 24px;
+    }
+  }
 
   img {
     width: 100%;
