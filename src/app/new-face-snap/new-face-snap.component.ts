@@ -34,7 +34,7 @@ export class NewFaceSnapComponent implements OnInit{
     this.faceSnapPreview$ = this.snapForm.valueChanges.pipe(
       map(formValue => ({
           ...formValue,
-          creatDate: new Date(),
+          createdDate: new Date(),
           snaps: 0,
           id: 0
       }))

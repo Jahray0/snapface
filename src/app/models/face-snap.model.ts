@@ -2,14 +2,14 @@ export class FaceSnap{
     id!:number;
     title!:string; 
     description!:string;
-    creatDate!:Date; 
+    createdDate!:Date; 
     snaps!:number ;
     imageUrl!:string;
     location?:string;
 
     /*constructor(public title:string, 
         public description:string, 
-        public creatDate:Date, 
+        public createdDate:Date, 
         public snaps:number, 
         public imageUrl:string,
         public location?:string){

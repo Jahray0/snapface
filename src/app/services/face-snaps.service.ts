@@ -1,5 +1,7 @@
 import { Injectable } from "@angular/core";
 import { FaceSnap } from "../models/face-snap.model";
+import { HttpClient } from "@angular/common/http";
+import { Observable } from "rxjs";
 
 //Objectif du service : partager les données
 
@@ -10,11 +12,14 @@ import { FaceSnap } from "../models/face-snap.model";
 })
 
 export class FaceSnapsService {
+  
+  constructor(private http: HttpClient) {} //Injection de dépendance : le service a besoin d'un autre service (ici httpClient)
+
     faceSnaps: FaceSnap[] = [{
         id: 1,
         title: 'Pichu',
         description: 'Petite souris jaune électrique',
-        creatDate: new Date(),
+        createdDate: new Date(),
         snaps: 25,
         imageUrl: 'https://www.pokebip.com/pokedex-images/ecarlate-violet/300/172.png?v=ev2',
         location: 'Jardin Trophée'
@@ -23,7 +28,7 @@ export class FaceSnapsService {
         id: 2,
         title: 'Pikachu',
         description: 'Évolution de Pichu',
-        creatDate: new Date(),
+        createdDate: new Date(),
         snaps: 32,
         imageUrl: 'https://www.pokebip.com/pokedex-images/ecarlate-violet/300/25.png?v=ev2',
         location: 'Forêt de Jade'
@@ -32,7 +37,7 @@ export class FaceSnapsService {
         id: 3,
         title: 'Raichu',
         description: 'Évolution de Pikachu',
-        creatDate: new Date(),
+        createdDate: new Date(),
         snaps: 50,
         imageUrl: 'https://www.pokebip.com/pokedex-images/ecarlate-violet/300/26.png?v=ev2',
         location: `Plage de l'Épreuve`
@@ -42,7 +47,7 @@ export class FaceSnapsService {
         id: 4,
         title: 'Salameche',
         description: 'Salamandre de feu',
-        creatDate: new Date(),
+        createdDate: new Date(),
         snaps: 25,
         imageUrl: 'https://www.pokebip.com/pokedex-images/ecarlate-violet/300/4.png?v=ev2',
         location: 'Bourg Palette'
@@ -52,7 +57,7 @@ export class FaceSnapsService {
         id: 5,
         title: 'Reptincel',
         description: 'Évolution Salameche',
-        creatDate: new Date(),
+        createdDate: new Date(),
         snaps: 32,
         imageUrl: 'https://www.pokebip.com/pokedex-images/ecarlate-violet/300/5.png?v=ev2',
         location: 'Batisques'
@@ -62,15 +67,15 @@ export class FaceSnapsService {
         id: 6,
         title: 'Dracaufeu',
         description: 'Évolution Reptincel',
-        creatDate: new Date(),
+        createdDate: new Date(),
         snaps: 50,
         imageUrl: 'https://www.pokebip.com/pokedex-images/ecarlate-violet/300/6.png?v=ev2',
         location: 'Antre 114'
       }];
 
-      getAllFaceSnaps(): FaceSnap[] {
-        return this.faceSnaps;
-      }
+      getAllFaceSnaps(): Observable<FaceSnap[]> {
+        return this.http.get<FaceSnap[]>('http://localhost:3000/facesnaps');
+    }
 
       getFaceSnapById(faceSnapId: number): FaceSnap {
         const faceSnap = this.faceSnaps.find(faceSnap => faceSnap.id === faceSnapId);
@@ -91,7 +96,7 @@ export class FaceSnapsService {
         const faceSnap: FaceSnap = {
           ...formValue,
           id: this.faceSnaps[this.faceSnaps.length - 1].id + 1,
-          creatDate: new Date(),
+          createdDate: new Date(),
           snaps: 0
         };
         this.faceSnaps.push(faceSnap);

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FaceSnap } from '../models/face-snap.model';
 import { FaceSnapsService } from '../services/face-snaps.service';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -10,16 +11,21 @@ import { FaceSnapsService } from '../services/face-snaps.service';
 })
 
 export class FaceSnapListComponent implements OnInit {
-
+  
+  faceSnaps$!: Observable<FaceSnap[]>;
   faceSnaps!: FaceSnap[];
 
+  constructor(private faceSnapsService: FaceSnapsService) { }
+
+
+
   //On injecte le service dans le constructeur
-  constructor(private faceSnapsService:FaceSnapsService) { }
 
   ngOnInit(): void {
-    this.faceSnaps = this.faceSnapsService.getAllFaceSnaps();
-  }
-
+    this.faceSnaps$ = this.faceSnapsService.getAllFaceSnaps();
+}
+  
+  //this.faceSnaps = this.faceSnapsService.getAllFaceSnaps();
 }
 
 

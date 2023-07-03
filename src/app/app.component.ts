@@ -21,7 +21,7 @@ export class AppComponent implements OnInit {
     /*this.mySnap = {
       title: 'Pichu',
       description: 'Petite souris jaune électrique',
-      creatDate: new Date(),
+      createdDate: new Date(),
       snaps: 25,
       imageUrl: 'https://www.pokebip.com/pokedex-images/ecarlate-violet/300/172.png?v=ev2',
       location: 'Johto'
@@ -30,7 +30,7 @@ export class AppComponent implements OnInit {
     this.mySnap2 = {
       title: 'Pikachu',
       description: 'Évolution de Pichu',
-      creatDate: new Date(),
+      createdDate: new Date(),
       snaps: 32,
       imageUrl: 'https://www.pokebip.com/pokedex-images/ecarlate-violet/300/25.png?v=ev2',
       location: 'Kanto'
@@ -39,7 +39,7 @@ export class AppComponent implements OnInit {
     this.mySnap3 = {
       title: 'Raichu',
       description: 'Évolution de Pikachu',
-      creatDate: new Date(),
+      createdDate: new Date(),
       snaps: 50,
       imageUrl: 'https://www.pokebip.com/pokedex-images/ecarlate-violet/300/26.png?v=ev2'
 
