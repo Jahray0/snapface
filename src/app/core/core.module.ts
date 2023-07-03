@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { httpInterceptorProviders } from './Interceptor';
 import { HeaderComponent } from './components/header/header.component';
 import { Router, RouterModule } from '@angular/router';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { Router, RouterModule } from '@angular/router';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    HttpClientModule
   ],
   exports:[
     HeaderComponent

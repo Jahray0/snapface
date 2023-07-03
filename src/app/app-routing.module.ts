@@ -1,28 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FaceSnapListComponent } from './face-snaps/components/face-snap-list/face-snap-list.component';
-import { LandingPageComponent } from './landing-page/landing-page.component';
-import { SingleFaceSnapComponent } from './face-snaps/components/single-face-snap/single-face-snap.component';
-import { NewFaceSnapComponent } from './face-snaps/components/new-face-snap/new-face-snap.component';
+import { LandingPageComponent } from './landing-page/components/landing-page/landing-page.component';
 
 //création des routes
 const routes: Routes = [
 
-    {path: 'facesnaps/:id', component: SingleFaceSnapComponent},
-    // /:id coresspond au parametre permettant de récupérer l'id de l'objet
-    {path: 'facesnaps', component: FaceSnapListComponent},
-    {path: 'create', component: NewFaceSnapComponent},
+    {path :'facesnaps', loadChildren: () => import('./face-snaps/face-snaps.module').then(m => m.FaceSnapsModule)},
     {path: '', component: LandingPageComponent}
-
-
-
 
 ];
 
 //import et exportation des routes
 @NgModule({
-    imports: [RouterModule.forRoot(routes), 
+    imports: [
+        RouterModule.forRoot(routes), 
     ],
-    exports: [RouterModule]
+    exports: [
+        RouterModule
+    ]
 })
 export class AppRoutingModule { }
